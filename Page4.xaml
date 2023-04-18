@@ -1,0 +1,121 @@
+﻿<Page
+    x:Class="PhoneTemplate.Page4"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PhoneTemplate"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.UI.Xaml.Controls"
+    mc:Ignorable="d" Background="Black">
+    <Grid CornerRadius="40,40,20,20">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/Backgrounds/MainPage.png"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="6*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+
+
+        <!-- This is where you add the XAML for this page -->
+
+
+
+        <!-- Overlay to make the navigation bar more visible -->
+        <Border x:Name="TicketDropShadow" Grid.ColumnSpan="6" Grid.Column="3" HorizontalAlignment="Left" Height="329" Margin="18,39,0,0" Grid.RowSpan="7" Grid.Row="3" VerticalAlignment="Top" Width="191">
+            <Border.Background>
+                <AcrylicBrush TintColor="#66000000"/>
+            </Border.Background>
+            <TextBlock x:Name="TextBlockTicketDropShadow"  Text="" TextWrapping="Wrap" Margin="6,6,5,9" Foreground="#FF2C2C2C" TextAlignment="Center" FontWeight="Bold" FontFamily="Arial Black" FontSize="10" />
+        </Border>
+
+
+
+        <!-- Overlay to make the navigation bar more visible -->
+        <Rectangle Grid.Column="0" Grid.Row="11"  Grid.ColumnSpan="16" Canvas.ZIndex="-1" Fill="White" Opacity="0.5" />
+        <Rectangle
+            RadiusX="10"
+            RadiusY="10"
+            Grid.ColumnSpan="10" Grid.Column="1" Margin="6,2,7,0" Grid.Row="2" Stroke="Black" StrokeThickness="4" Grid.RowSpan="2" Height="76" VerticalAlignment="Top"
+                    >
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/Assets/Icons/LotteryTileIcon.png" Stretch="UniformToFill"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock Text="🎫Lottery" TextWrapping="Wrap" Grid.ColumnSpan="8" Margin="20,11,20,0" Grid.Column="2" FontFamily="Arial Black" FontWeight="Bold" VerticalAlignment="Top" TextAlignment="Center" Foreground="White" FontSize="48" Grid.Row="2" Grid.RowSpan="2"/>
+        <Image 
+            Grid.ColumnSpan="3" 
+            Grid.Column="5" 
+            Height="72" 
+            VerticalAlignment="Top" 
+            Source="/Assets/Icons/AppIcon.png" 
+            Margin="0,0,34,0" 
+            Grid.RowSpan="2" Grid.Row="1"
+        />
+        <Border x:Name="TicketBorder" Grid.Column="3" Grid.ColumnSpan="6" BorderThickness="4" Margin="14,29,14,0" Grid.Row="3" Height="326" VerticalAlignment="Top" Grid.RowSpan="7">
+            <Border.BorderBrush>
+                <AcrylicBrush TintColor="#FFD3D3A7"/>
+            </Border.BorderBrush>
+            <Border.Background>
+                <AcrylicBrush TintOpacity="1" TintColor="#FFE6DDB7"/>
+            </Border.Background>
+            <TextBlock x:Name="TextBlockTicket"  Text="" TextWrapping="Wrap" Margin="6,6,5,9" Foreground="#FF2C2C2C" TextAlignment="Center" FontWeight="Bold" FontFamily="Arial Black" FontSize="10" />
+        </Border>
+        <Button x:Name="ButtonSelect" Grid.Row="10" Grid.Column="2" Grid.ColumnSpan="8" CornerRadius="10,10,10,10" Content="🎫Get Ticket" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" BorderBrush="White" Margin="12,8,10,8" FontFamily="Arial Black" FontWeight="Bold" FontSize="24" Tapped="ButtonSelect_Tapped"/>
+        <controls:NumberBox 
+            x:Name="TextBoxTickets" 
+            CornerRadius="10" 
+            Grid.Column="7" 
+            Margin="10,14,18,10" 
+            Grid.Row="9" Text="1" 
+            Grid.ColumnSpan="4" 
+            FontFamily="Arial Black" 
+            FontWeight="Bold" 
+            Foreground="White"
+            SpinButtonPlacementMode="Compact">
+            <controls:NumberBox.BorderBrush>
+                <AcrylicBrush TintColor="#CC111111"/>
+            </controls:NumberBox.BorderBrush>
+            <controls:NumberBox.Background>
+                <AcrylicBrush TintColor="#CC000000" TintOpacity="0.5"/>
+            </controls:NumberBox.Background>
+        </controls:NumberBox>
+        <TextBlock x:Name="TextBlockNumber" Grid.Column="1" HorizontalAlignment="Left" Margin="18,21,0,0" Grid.Row="9" Text="Number of Ticket Rows" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="6" Width="185" Foreground="White" FontFamily="Arial Black" FontWeight="Bold" FontSize="16"/>
+        <Border Grid.Column="7" Grid.ColumnSpan="4" CornerRadius="10" BorderThickness="4" Margin="18,14,7,9" Grid.Row="1">
+            <Border.BorderBrush>
+                <AcrylicBrush TintColor="Black"/>
+            </Border.BorderBrush>
+            <Border.Background>
+                <AcrylicBrush TintOpacity="0.5" TintColor="#CC000000"/>
+            </Border.Background>
+            <TextBlock x:Name="TextBoxBalance" Grid.Column="1" Grid.Row="7" Text="$1000.10" VerticalAlignment="Top" Grid.ColumnSpan="10" Margin="10,5,10,0" FontWeight="Bold" FontFamily="Arial Black" Foreground="White" TextAlignment="Center"/>
+        </Border>
+        <Button x:Name="ButtonAddMoney" Content="+" Grid.Column="9" Margin="34,18,0,0" CornerRadius="10,10,10,10" Padding="1" Grid.Row="1" Width="26" FontFamily="Arial Black" FontSize="18" FontWeight="Bold" RequestedTheme="Default" Height="26" Tapped="ButtonAddMoney_Tapped" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+    </Grid>
+</Page>

@@ -1,0 +1,91 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PhoneTemplate"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Custom="using:Windows.UI.Xaml.Controls.Maps"
+    x:Class="PhoneTemplate.Page6"
+    mc:Ignorable="d" Background="Black">
+    <Grid CornerRadius="40,40,20,20">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/Backgrounds/MainPage.png"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="6*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+
+
+        <!-- This is where you add the XAML for this page -->
+
+
+
+        <!-- Overlay to make the navigation bar more visible -->
+        <Rectangle Grid.Column="0" Grid.Row="11"  Grid.ColumnSpan="16" Canvas.ZIndex="-1" Fill="White" Opacity="0.5" />
+        <Rectangle
+            RadiusX="10"
+            RadiusY="10"
+            Grid.ColumnSpan="10" Grid.Column="1" Margin="6,2,7,0" Grid.Row="2" Stroke="Black" StrokeThickness="4" Grid.RowSpan="2" Height="76" VerticalAlignment="Top"
+                    >
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/Assets/Icons/LocationTileIcon.png" Stretch="UniformToFill"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock Text="📍Location" TextWrapping="Wrap" Grid.ColumnSpan="8" Margin="4,11,5,0" Grid.Column="2" FontFamily="Arial Black" FontWeight="Bold" VerticalAlignment="Top" TextAlignment="Center" Foreground="White" FontSize="48" Grid.Row="2" Grid.RowSpan="2"/>
+        <Image 
+            Grid.ColumnSpan="3" 
+            Grid.Column="5" 
+            Height="72" 
+            VerticalAlignment="Top" 
+            Source="/Assets/Icons/AppIcon.png" 
+            Margin="0,0,34,0" 
+            Grid.RowSpan="2" Grid.Row="1"
+        />
+
+        <Custom:MapControl x:Name="Map" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="10" Grid.RowSpan="5" Margin="17,29,18,27" ZoomInteractionMode="GestureAndControl" TiltInteractionMode="GestureAndControl"  MapServiceToken="3vdnSk0nyishgv4Ceqzz~mCaMMfLHVPMIgtWAXW34ug~ApvymDs9pkdxGAbVJFhLPNiNupIPq92FcT_e6Ofmu72V8XzaMXbUov-TYUqzn_Lr" />
+        <ListView x:Name="LocationListView" Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="10" Grid.RowSpan="3" SelectedIndex="0" Margin="18,34,18,5" Foreground="White" SelectionChanged="LocationListView_SelectionChanged">
+            <ListView.Background>
+                <AcrylicBrush TintColor="#CC000000"/>
+            </ListView.Background>
+        </ListView>
+        <ToggleSwitch x:Name="SatelliteMode" Grid.Column="1" Header="Satellite Mode" Margin="18,32,0,0" Grid.Row="7" VerticalAlignment="Top" Grid.ColumnSpan="5" Width="105" Height="54" Grid.RowSpan="2" Foreground="White" RequestedTheme="Dark" Toggled="SatelliteMode_Toggled"/>
+        <Border Grid.Column="7" Grid.ColumnSpan="4" CornerRadius="10" BorderThickness="4" Margin="18,14,7,9" Grid.Row="1">
+            <Border.BorderBrush>
+                <AcrylicBrush TintColor="Black"/>
+            </Border.BorderBrush>
+            <Border.Background>
+                <AcrylicBrush TintOpacity="0.5" TintColor="#CC000000"/>
+            </Border.Background>
+            <TextBlock x:Name="TextBoxBalance" Grid.Column="1" Grid.Row="7" Text="$1000.10" VerticalAlignment="Top" Grid.ColumnSpan="10" Margin="10,5,10,0" FontWeight="Bold" FontFamily="Arial Black" Foreground="White" TextAlignment="Center"/>
+        </Border>
+        <Button x:Name="ButtonAddMoney" Content="+" Grid.Column="9" Margin="34,18,0,0" CornerRadius="10,10,10,10" Padding="1" Grid.Row="1" Width="26" FontFamily="Arial Black" FontSize="18" FontWeight="Bold" RequestedTheme="Default" Height="26" Tapped="ButtonAddMoney_Tapped" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+
+    </Grid>
+</Page>

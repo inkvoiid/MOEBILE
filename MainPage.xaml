@@ -1,0 +1,142 @@
+﻿<Page
+    x:Class="PhoneTemplate.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PhoneTemplate"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Background="Black"   >
+
+    <Grid CornerRadius="40,40,20,20" Margin="5,5,5,5">
+         <Grid.RowDefinitions>
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="6*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Top Bar -->
+        <Rectangle Grid.Column="0" Grid.Row="0"  Grid.ColumnSpan="12" Fill="Black" Opacity="0.5" />
+        
+        <!-- If you just want the camera as a button use this.       
+        <Button Name="CameraButton" 
+                CornerRadius="20,20,20,20"
+               Grid.Column="5" Grid.Row="0"  Grid.ColumnSpan="2"
+               FontFamily="Segoe MDL2 Assets" 
+               Content="&#xE81D;" 
+               FontSize="16" 
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+               Click="CameraButton_Click" Foreground="#FFF3E5E5" />
+         -->
+        <Button Name="DiviceFlyout"      
+                CornerRadius="20,20,20,20"
+                Grid.Column="5" Grid.Row="0"  Grid.ColumnSpan="2"
+                FontFamily="Segoe MDL2 Assets" 
+                Content="&#xE81D;" 
+                FontSize="16" 
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Foreground="#FFF3E5E5">
+                <Button.Flyout >
+                    <MenuFlyout Placement="Bottom" >
+                    <MenuFlyoutItem Name="Item1" Text="Phone 5" Click="Item1_Click" CornerRadius="20,20,20,20"/>
+                    <MenuFlyoutItem Name="Item2" Text="Phone 6" Click="Item2_Click" CornerRadius="20,20,20,20"/>
+                    <MenuFlyoutItem Name="Item4" Text="Tablet 8" Click="Item3_Click" CornerRadius="20,20,20,20"/>
+                    <MenuFlyoutItem Name="Item6" Text="Desktop 13.3" Click="Item4_Click" CornerRadius="20,20,20,20"/>
+                    <MenuFlyoutItem Name="Item7" Text="Xbox 42" Click="Item5_Click" CornerRadius="20,20,20,20"/>
+                </MenuFlyout>
+            </Button.Flyout>
+        </Button>
+
+        <TextBlock Foreground="#FFF3E5E5"
+                   Grid.Column="1" Grid.Row="0"  Grid.ColumnSpan="3"
+                   FontFamily="Segoe MDL2 Assets" 
+                   Text="&#xE1E9; &#xE701; &#xEC71; &#xEA8C; &#xE76E;" 
+                   FontSize="14" 
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" Opacity="0.7"/>
+
+        <TextBlock Foreground="#FFF3E5E5"
+                   Grid.Column="7" Grid.Row="0"  Grid.ColumnSpan="2"
+                   FontFamily="Segoe MDL2 Assets" 
+                   Text="&#xEBB4;" 
+                   FontSize="14" 
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" 
+                   Opacity="0.7"/>
+
+        <TextBlock x:Name="TimeTextBlock"
+                   Foreground="#FFF3E5E5"
+                   Grid.Column="9" Grid.Row="0"  Grid.ColumnSpan="2"        
+                   FontSize="12" 
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Left" 
+                   FontFamily="Arial" 
+                   Opacity="0.7"/>
+        
+        <!-- Bottom Bar -->
+        <Rectangle Grid.Column="0" Grid.Row="11"  Grid.ColumnSpan="12" Fill="Black" Opacity="0.5" />
+
+        <Button Name="BackButton" 
+                CornerRadius="20,20,20,20"
+                Grid.Column="2" Grid.Row="11"  Grid.ColumnSpan="2"
+                FontFamily="Segoe MDL2 Assets" 
+                Content="&#xEDD9;" 
+                FontSize="20" 
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                Click="BackButton_Click"/>
+
+        <Button Name="HomeButton" 
+                CornerRadius="20,20,20,20"
+                Grid.Column="5" Grid.Row="11"  Grid.ColumnSpan="2"
+                FontFamily="Segoe MDL2 Assets" 
+                Content="&#xE002;" 
+                FontSize="20" 
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                Click="HomeButton_Click"/>
+
+        <Button Name="NextButton" 
+                CornerRadius="20,20,20,20"
+                Grid.Column="8" Grid.Row="11"  Grid.ColumnSpan="2"
+                FontFamily="Segoe MDL2 Assets" 
+                Content="&#xEDDA;" 
+                FontSize="20" 
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                Click="NextButton_Click"/>
+
+        <!-- Frame where all the pages will be loaded into -->
+        <Frame Name="MyFrame" 
+               Grid.Column="0" Grid.Row="0"  Grid.ColumnSpan="12" Grid.RowSpan="12" 
+               Canvas.ZIndex="-1"/>
+
+    </Grid>
+</Page>
+
+
+
